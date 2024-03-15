@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,6 +17,10 @@ Route::get('reset/{token}',[AuthController::class,'getReset']);
 Route::post('reset/{token}',[AuthController::class,'postReset']);   
 Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/dashboard',[DashboardController::class,'dashboard']);
+    Route::get('admin/customers',[CustomersController::class,'customers']);
+    Route::get('admin/customers/add',[CustomersController::class,'add_customers']);
+    Route::post('admin/customers/add',[CustomersController::class,'insert_add_customers']);
+
 });
 
 Route::get('logout',[AuthController::class,'logout']);

@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MedicinesController;
+use App\Http\Controllers\MedicinesStockController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -34,6 +35,15 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/medicines/edit/{id}',[MedicinesController::class,'edit_medicines']);
     Route::post('admin/medicines/edit/{id}',[MedicinesController::class,'update_medicines']);
     Route::get('admin/medicines/delete/{id}',[MedicinesController::class,'delete_medicines']);
+
+    //admin/medicines_stock
+
+    Route::get('admin/medicines_stock',[MedicinesStockController::class,'medicines_stock']);
+    Route::get('admin/medicines_stock/add',[MedicinesStockController::class,'add_medicines_stock']);
+    Route::post('admin/medicines_stock/add',[MedicinesStockController::class,'insert_add_medicines_stock']);
+    Route::get('admin/medicines_stock/edit/{id}',[MedicinesStockController::class,'edit_medicines_stock']);
+    Route::post('admin/medicines_stock/edit/{id}',[MedicinesStockController::class,'update_medicines_stock']);
+    Route::get('admin/medicines_stock/delete/{id}',[MedicinesStockController::class,'delete_medicines_stock']);
 
 });
 

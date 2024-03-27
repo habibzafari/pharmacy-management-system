@@ -3,8 +3,10 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\InvoicesController;
 use App\Http\Controllers\MedicinesController;
 use App\Http\Controllers\MedicinesStockController;
+use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -44,6 +46,28 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/medicines_stock/edit/{id}',[MedicinesStockController::class,'edit_medicines_stock']);
     Route::post('admin/medicines_stock/edit/{id}',[MedicinesStockController::class,'update_medicines_stock']);
     Route::get('admin/medicines_stock/delete/{id}',[MedicinesStockController::class,'delete_medicines_stock']);
+
+    //admin/supplier
+
+    Route::get('admin/supplier',[SupplierController::class,'supplier']);
+    Route::get('admin/supplier/add',[SupplierController::class,'add_supplier']);
+    Route::post('admin/supplier/add',[SupplierController::class,'insert_supplier']);
+    Route::get('admin/supplier/edit/{id}',[SupplierController::class,'edit_supplier']);
+    Route::post('admin/supplier/edit/{id}',[SupplierController::class,'update_supplier']);
+    Route::get('admin/supplier/delete/{id}',[SupplierController::class,'delete_supplier']);
+
+    // admin/invoices
+
+    Route::get('admin/invoices',[InvoicesController::class,'invoices']);
+    Route::get('admin/invoices/add',[InvoicesController::class,'add_invoices']);
+    Route::post('admin/invoices/add',[InvoicesController::class,'insert_add_invoices']);
+    Route::get('admin/invoices/edit/{id}',[InvoicesController::class,'edit_invoices']);
+    Route::post('admin/invoices/edit/{id}',[InvoicesController::class,'update_invoices']);
+    Route::get('admin/invoices/delete/{id}',[InvoicesController::class,'delete_invoices']);
+
+
+
+
 
 });
 

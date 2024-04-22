@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InvoicesController;
 use App\Http\Controllers\MedicinesController;
 use App\Http\Controllers\MedicinesStockController;
+use App\Http\Controllers\PurchasesController;
 use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
 
@@ -66,8 +67,19 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/invoices/delete/{id}',[InvoicesController::class,'delete_invoices']);
 
 
+    // admin/purchases
 
+    Route::get('admin/purchases',[PurchasesController::class,'purchases']);
+    Route::get('admin/purchases/add',[PurchasesController::class,'add_purchases']);
+    Route::post('admin/purchases/add',[PurchasesController::class,'insert_add_purchases']);
+    Route::get('admin/purchases/edit/{id}',[PurchasesController::class,'edit_purchases']);
+    Route::post('admin/purchases/edit/{id}',[PurchasesController::class,'update_purchases']);
+    Route::get('admin/purchases/delete/{id}',[PurchasesController::class,'delete_purchases']);
 
+    // admin/my_account
+
+    Route::get('admin/my_account',[DashboardController::class,'my_account']);
+    Route::post('admin/my_account',[DashboardController::class,'update_my_account']);
 
 });
 

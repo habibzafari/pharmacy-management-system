@@ -8,6 +8,7 @@ use App\Http\Controllers\MedicinesController;
 use App\Http\Controllers\MedicinesStockController;
 use App\Http\Controllers\PurchasesController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\WebsiteLogoController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -80,6 +81,10 @@ Route::group(['middleware' => 'admin'], function () {
 
     Route::get('admin/my_account',[DashboardController::class,'my_account']);
     Route::post('admin/my_account',[DashboardController::class,'update_my_account']);
+
+    // website_logo
+    Route::get('admin/website_logo',[WebsiteLogoController::class,'website_logo']);
+    Route::post('admin/website_logo_update',[WebsiteLogoController::class,'website_logo_update']);
 
 });
 

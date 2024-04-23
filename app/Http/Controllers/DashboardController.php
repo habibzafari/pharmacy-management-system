@@ -2,6 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CustomersModel;
+use App\Models\InvoiceModel;
+use App\Models\MedicinesModel;
+use App\Models\MedicinesStockModel;
+use App\Models\PurchasesModel;
+use App\Models\SupplierModel;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,7 +18,13 @@ class DashboardController extends Controller
 {
     public function dashboard()
     {
-        return view('admin.dashboard.list');
+        $data['TotalCustomers'] = CustomersModel::count();
+        $data['TotalMedicines'] = MedicinesModel::count();
+        $data['TotalMedicinesStock'] = MedicinesStockModel::count();
+        $data['TotalSuppliers'] = SupplierModel::count();
+        $data['TotalInvoices'] = InvoiceModel::count();
+        $data['TotalPurchases'] = PurchasesModel::count();
+        return view('admin.dashboard.list',$data);
     }
 
     public function my_account(Request $request)

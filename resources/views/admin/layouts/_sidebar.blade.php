@@ -42,33 +42,34 @@
                       <span>Invoices</span>
                   </a>
               </li>
+
               <li class="nav-item">
                   <a class="nav-link @if (Request::segment(2) == 'purchases') @else collapsed @endif" href="{{url('admin/purchases')}}">
                       <i class="bi bi-currency-dollar"></i>
                       <span>Purchases</span>
                   </a>
               </li>
+
+              <li class="nav-item">
+                  <a class="nav-link @if (Request::segment(2) == 'website_logo') @else collapsed @endif" href="{{url('admin/website_logo')}}">
+                      <i class="bi bi-dash-circle"></i>
+                      <span>Website Logo</span>
+                  </a>
+              </li>
+
               <li class="nav-item">
                   <a class="nav-link @if (Request::segment(2) == 'my_account') @else collapsed @endif" href="{{url('admin/my_account')}}">
                       <i class="bi bi-layout-text-window-reverse"></i>
                       <span>My Account</span>
                   </a>
               </li>
+
               <li class="nav-item">
                   <a class="nav-link @if (Request::segment(2) == 'logout') @else collapsed @endif" href="{{url('logout')}}">
                       <i class="bi bi-box-arrow-right"></i>
                       <span>Logout</span>
                   </a>
               </li>
-
-
-              {{-- <li class="nav-item">
-                  <a class="nav-link collapsed" href="users-profile.html">
-                      <i class="bi bi-person"></i>
-                      <span>Profile</span>
-                  </a>
-              </li> --}}
-
           </ul>
 
       </aside>

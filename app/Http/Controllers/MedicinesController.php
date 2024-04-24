@@ -9,7 +9,8 @@ class MedicinesController extends Controller
 {
     public function medicines()
     {
-        $data['getRecord'] = MedicinesModel::getAllRecords(); 
+        $data['getRecord'] = MedicinesModel::getAllRecords();
+        $data['meta_title'] = "Medicines"; 
         return view('admin.medicines.list',$data);
     }
 

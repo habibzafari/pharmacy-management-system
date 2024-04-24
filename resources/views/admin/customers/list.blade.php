@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="pagetitle">
-        <h1>Customers</h1>
+        <h1>{{ !empty($meta_title) ? $meta_title : 'Customers' }}</h1>
     </div>
     <section class="section">
         <div class="row">

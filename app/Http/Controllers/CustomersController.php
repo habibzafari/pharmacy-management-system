@@ -10,7 +10,8 @@ class CustomersController extends Controller
     public function customers(Request $request)
     {
         // $data['getRecord'] = CustomersModel::get(); 
-        $data['getRecord'] = CustomersModel::getAllRecords(); 
+        $data['getRecord'] = CustomersModel::getAllRecords();
+        $data['meta_title'] = "Custormers"; 
         return view('admin.customers.list',$data);
     }
 

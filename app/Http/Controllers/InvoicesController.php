@@ -11,6 +11,7 @@ class InvoicesController extends Controller
     public function invoices()
     {
         $data['getRecord'] = InvoiceModel::get();
+        $data['meta_title'] = "Invoices";
         return view('admin.invoices.list',$data);
     }
 

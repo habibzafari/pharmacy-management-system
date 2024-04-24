@@ -1,3 +1,7 @@
+@php
+  $GetLogoImage = \App\Models\WebsiteLogoModel::first();
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +14,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{asset('assets/img/favicon.png')}}" rel="icon">
+  <link href="{{ $GetLogoImage->getLogo() }}" rel="icon">
   <link href="{{asset('assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -44,9 +48,9 @@
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
               <div class="d-flex justify-content-center py-4">
-                <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="{{asset('assets/img/logo.png')}}" alt="" style="margin-right: 3px"> 
-                  <span class="d-none d-lg-block">My Company</span>
+                <a class="logo d-flex align-items-center w-auto">
+                  <img src="{{ $GetLogoImage->getLogo() }}" width="30px" height="30px" alt="" style="margin-right: 5px"> 
+                  <span class="d-none d-lg-block">{{ $GetLogoImage->website_name}}</span>
                 </a>
               </div><!-- End Logo -->
 

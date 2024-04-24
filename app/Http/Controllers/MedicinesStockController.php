@@ -12,6 +12,7 @@ class MedicinesStockController extends Controller
     {
         // echo "hello";die();
         $data['getRecord'] = MedicinesStockModel::get();
+        $data['meta_title'] = "Medicines Stock";
         return view('admin.medicines_stock.list',$data);
     }
 

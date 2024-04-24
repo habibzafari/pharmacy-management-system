@@ -24,6 +24,7 @@ class DashboardController extends Controller
         $data['TotalSuppliers'] = SupplierModel::count();
         $data['TotalInvoices'] = InvoiceModel::count();
         $data['TotalPurchases'] = PurchasesModel::count();
+        $data['meta_title'] = "Dashboard";
         return view('admin.dashboard.list',$data);
     }
 
